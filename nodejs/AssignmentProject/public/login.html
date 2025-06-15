@@ -106,7 +106,7 @@
           if (result.success) {
             alertBox.style.display = "none";
             sessionStorage.setItem("nickname", formData.username);
-            window.location.href = "/main.html";
+            window.location.href = "/main";
           } else {
             alertBox.textContent = result.message;
             alertBox.style.display = "block";
