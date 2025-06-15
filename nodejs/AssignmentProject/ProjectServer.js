@@ -104,10 +104,10 @@ app.post('/rooms', (req, res) => {
   } else if (found) {
     res.send({ success: false, message: "채팅방 이름 이슈: 중복된 이름입니다." });
   } else {
-    const time = new Date().toLocaleString();
+
     rooms.push({ roomName });
     fs.writeFileSync("rooms.json", JSON.stringify(rooms, null, 2));
-    res.send({ success: true, roomName, time });
+    res.send({ success: true, roomName});
   }
 });
 
