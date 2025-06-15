@@ -107,15 +107,15 @@
 
     window.setInterval(fetchRoomsAndRender,500);
 
-    document.addEventListener("mousemove", (e) => {
+     document.addEventListener("mousemove", (e) => {
       let eye = document.getElementById("doge");
       let eyeBox = eye.getBoundingClientRect();
       let centerX = eyeBox.left + eyeBox.width / 2;
       let centerY = eyeBox.top + eyeBox.height / 2;
       let deltaX = (e.clientX - centerX) * 0.1;
       let deltaY = (e.clientY - centerY) * 0.09;
-      let x = Math.max(-3.5, Math.min(3.5, deltaX) + 2);
-      let y = Math.max(3.5, Math.min(3.5, deltaY) + 9);
+      let x = Math.max(-3.5, Math.min(3.5, deltaX));
+      let y = Math.max(-3.5, Math.min(3.5, deltaY) + 9);
       eye.style.transform = `translate(${x}px, ${y}px)`;
 
       let bg = document.getElementById("bg");
