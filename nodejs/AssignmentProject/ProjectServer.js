@@ -112,11 +112,6 @@ app.post('/rooms', (req, res) => {
 });
 
 app.post('/messages', (req, res) => {
-  const { room, user, message } = req.body;
-  if (!room || !user || !message) {
-    return res.status(400).send({ success: false, message: "필수 항목 누락" });
-  }
-
   const messages = readJSON("messages.json");
 
   const newMsg = {
