@@ -18,16 +18,8 @@ function readJSON(filePath) {
 }
 
 app.use(express.static('public'));
-app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.urlencoded());
 app.use(bodyParser.json());
-
-app.get('/login', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'login.html'));
-});
-
-app.get('/main', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'main.html'));
-});
 
 app.post('/login', (req, res) => {
   const { username, password } = req.body;
@@ -144,5 +136,5 @@ app.listen(port, () => {
     process.stdout.write('\r서버 구동 중' + dot[i % dot.length] + ' ');
     i++;
   }, 500);
-  console.log(`\n서버 주소: http://localhost:${port}/login`);
+  console.log(`\n서버 주소: http://localhost:${port}/login.html`);
 });
