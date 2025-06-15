@@ -112,6 +112,8 @@ app.post('/rooms', (req, res) => {
 });
 
 app.post('/messages', (req, res) => {
+  const { room, user, message } = req.body;
+
   const messages = readJSON("messages.json");
 
   const newMsg = {
