@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Welcome</title>
+    </head>
+    <body>
+        <h1>실습 #1:EX.6-1</h1>
+        <script>
+        function func() {
+            let name = prompt("Input Name: ");
+            document.write("Welcome " + name);
+        }
+    </script>
+    <button type="button" onclick="func()">눌러주세요</button>
+    <br>
+    <body>
+        <h1>실습 #2:EX.6-2</h1>
+        <script>
+            let date=new Date()
+            let year=date.getFullYear() 
+            let month=date.getMonth() 
+            let day=date.getDate() 
+            let hours=date.getHours() 
+            let minutes=date.getMinutes() 
+            let seconds=date.getSeconds() 
+            let msg="오늘은 "+
+            year+"년 "+
+            month+"월 "+
+            day+"일 "+
+            hours+"시 "+
+            minutes+"분 "+
+            seconds+"초 "
+            document.write(msg)
+    </script>
+    <section>
+        <hr>
+        <h3>클릭</h3>
+        <hr>
+        <img src="download.jpg" alt="이미지" onclick="this.src='아이스-아메리카노-P.jpg'">
+    </section>
+    <br>
+    <section>
+        <hr>
+        <h3>마우스를 올려보셔요!</h3>
+        <hr>
+        <img src="download.jpg" alt="이미지" onmouseout="this.src='download.jpg'" onmouseover="this.src='아이스-아메리카노-P.jpg'">
+    </section>
+    <script>
+        function over(obj){
+            obj.src="download.jpg";
+        }
+        function out(obj){
+            obj.src="아이스-아메리카노-P.jpg";
+        }
+    </script>
+    <section>
+        <img src="download.jpg" alt="이미지" onmouseout="over(this)" onmouseover="out(this)">
+    </section>
+    <script>
+        let ret = prompt("이름을 입력하세요!", "노현수")
+        alert(ret+"님을 환영합니다")
+    </script>
+</body>
+</html>

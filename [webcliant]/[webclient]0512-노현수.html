@@ -1,0 +1,80 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport$" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 실습 #1. EX.6-3 -->
+    <!-- <hr>
+    <div id="target"><p>test</p></div>
+    <script>
+        let session;
+        let month=prompt("월을 입력해주세요.", 1);
+        month=parseInt(month);
+        if (month==12||1==month||month==2)
+            session='겨울입니다';
+            else if (month>=3||month<=5)
+            session='봄입니다';
+            else if (month>=6||month<=8)
+            session='여름입니다';
+        else if (month>=9||month<=11)
+            session='가을입니다';
+        else
+            session='1~12 입력';
+        document.getElementById("target").innerHTML=`${month}월은 ${session}`;
+    </script> -->
+    <!-- 실습 #2. EX.6-4 -->
+    <!-- <form name="덧셈계산기" action="" method="post">
+        첫번쨰 정수:<input id="a" name="int1" type="text" value=""><br>
+        두번쨰 정수:<input id="b" name="int2" type="text" value=""><br>
+        합계:<input id="t" name="sum" type="text" value=""><br>
+        <button type="button" onclick="calc()"> 계산</button>
+    </form>
+    <script>
+        function calc(){
+            let a=document.getElementById("a");
+            let b=document.getElementById("b");
+            let t=document.getElementById("t");
+            t.value=parseInt(a.value)+parseInt(b.value);
+        }
+    </script> -->
+    <!-- 실습 #3. EX.6-5 -->
+    <!-- <script>
+        function add1(a, b){alert(add1(a,b));}
+        let add2=function(a,b){alert(`${a+b}`);}
+        let add3=(a,b)=>{alert(`${a+b}`);}
+        add1(1,3)
+        add2(2,3)
+        add3(3,5)
+    </script> -->
+    <script>
+        let account1={
+            owner:'노현수',
+            code:"111",
+            balance:"3500",
+            deposit: function(){},
+            withdraw: function(){},
+            inquiry: function(){}
+        }
+        let account2={
+            owner:'노윤수',
+            code:"112",
+            balance:"35001",
+            deposit: function(){},
+            withdraw: function(){},
+            inquiry: function(){}
+        }
+        let account3={
+            owner:'김길수',
+            code:"113",
+            balance:"35020",
+            deposit: function(){},
+            withdraw: function(){},
+            inquiry: function(){}
+        }
+    </script>
+</body>
+</html>

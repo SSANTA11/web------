@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    <style>
+        h1 {color: red}
+        body {background-color: yellow;}
+        .first {color: blue;}
+        .second {color: green;}
+
+    </style>
+    </head>
+    <body>
+    <h1>이메일 전송 화면</h1>
+    <hr>
+    <h2>실습#1: EX.3-2</h2>
+    <section>
+        <form method="get" action="doEmail">
+            이름: <input type="text" name="name" value="" /><br>
+            이메일 주소: <input type="email" name="email" value="" /><br>
+            내용:<br>
+            <textarea name="contnent" cols="100" rows="10">
+            </textarea><br>
+            <input type="submit" value="Send" />
+            <input type="reset" value="Reset" />
+            
+        </form>
+    </section>
+    <hr>
+    <h2>실습#2: EX.3-3</h2>
+    <section>
+        <h3>데이터리스트</h3>
+        <article>
+            <input type="text" list="carBrands">
+            <datalist id="carBrands">
+                <option value="BMW"></option>
+                <option value="Hyundai"></option>
+                <option value="Benz"></option>
+                <option value="Kia"></option>
+            </datalist>
+        </article>
+    </section>
+    <section>
+        <h3>셀렉트</h3>
+        <form method="get" action="choiceCar.do">
+            <select name="car">
+                <option value="0">BMW</option>
+                <option value="1">Hyundai</option>
+                <option value="2">Benz</option>
+                <option value="3">Kia</option>
+            </select>
+        </form>
+    </section>
+    <hr>
+    <section>
+        <h2>실습#3: EX.4-1</h2>
+        <h1> Web 커피 메뉴</h1>
+        <img src="coffeestory_04.jpg" width="300" ->
+        <h2>아메리카노 5000원</h2>
+        <p class="first"> 에스프레소에 물을 추가한 것입니다.</p>
+        <h2> 카페오레 6000원</h2>
+        <p> 에스프레소에 우유를 넣은 커피입니다.</p>
+        <h2> 카푸치노 6000원</h2>
+        <p class="second"> 커피 위에 우유 거품을 얹은 커피입니다.</p>        
+    </section>
+</body>
+</html>

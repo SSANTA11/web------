@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>카드 회전</title>
+    <style>
+        .container {
+            perspective: 1000px;
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+            position: relative
+        }
+        .card {
+            width: 500px;
+            transition: transform 0.1s ease;
+            transform-style: preserve-3d;
+        }
+        .overlay {
+            width: 500px;
+            background: linear-gradient(105deg, transparent 40%, rgb(255, 255, 255) 50%, transparent 54%);
+            position: absolute;
+            background-size: 150% 150%;
+            background-position: 100%;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            height: 100%;
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        .container:hover .overlay {
+            opacity: 0.3;
+        }
+        @keyframes shine {
+            0% { background-position: -100% 0; }
+            100% { background-position: 200% 0; }
+        }
+    </style>
+</head>
+<body>
+    
+    <div>TH<strong id="MTxt">A</strong>NKS</div>
+    <div id="output1"></div>
+    <div id="output2">마우스 포인터 위치</div>
+    <div class="container">
+        <img class="card" src="https://pokemoncard.co.kr/info/images/renew/1_0-4.png" alt="카드깡">
+        <div class="overlay"></div>
+    </div>
+    <div id="output3"></div>
+
+    <script>
+        // 시간 카운트
+        let count = 0;
+        let hour = 0;
+        setInterval(() => {
+            count++;
+            if (count >= 60) {
+                count = 0;
+                hour++;
+            }
+            document.getElementById("output3").innerHTML = `${hour}분 ${count}초`;
+        }, 1000);
+
+        // 현재 시간
+        function updateCountdown() {
+            let now = new Date();
+            document.getElementById("output1").innerHTML = `현재 시간: ${now.toLocaleTimeString()}`;
+        }
+        setInterval(updateCountdown, 1000);
+
+        // 마우스 좌표 출력
+        document.addEventListener('mousemove', (e) => {
+            document.getElementById('output2').innerHTML = `x=${e.clientX}, y=${e.clientY}`;
+        });
+
+        // 텍스트 색상 변경
+        let text = document.getElementById("MTxt");
+        text.onmouseover = () => text.style.color = "white";
+        text.onmouseout = () => text.style.color = "black";
+
+        // 카드 회전 로직
+        let card = document.querySelector(".card");
+
+        card.addEventListener('mousemove', (e) => {
+            let x = e.offsetX;
+            let y = e.offsetY;
+            let width = card.offsetWidth;
+            let height = card.offsetHeight;
+
+            if (x >= 50 && x <= 450 && y >= 0 && y <= 800) {
+                let rotateY = Math.tanh((x - width / 2) / (width / 4)) * 15;
+                let rotateX = -Math.tanh((y - height / 2) / (height / 4)) * 15;
+
+                card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+            } else {
+                card.style.transform = 'none'; // 원래대로
+            }
+        });
+
+        // 마우스가 이미지 밖으로 나가면 회전 리셋
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'none';
+        });
+    </script>
+</body>
+</html>

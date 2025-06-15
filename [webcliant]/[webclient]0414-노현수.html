@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* span {
+            display: block;
+            width: 100px;
+            height: 60px;
+        } */
+        /* div div {
+            display: inline;
+            background-color: blueviolet;
+        } */
+        .div1 {
+            display:inline-block; 
+            background-color: red; 
+            width: 40px; 
+            height:40px;
+            text-align: center;
+        }
+
+        #down:hover{
+            position: relative; 
+            left: 20px; 
+            top: 20px; 
+            background-color: green;
+        }
+
+        #up:hover{position: relative; 
+            right: 20px; 
+            bottom: 20px; 
+            background-color: green;
+        }
+        .div2 div{position: absolute; height: 100px; width: 100px;}
+        #box1 {z-index: 0; background-color: red;}
+        #box2 {z-index: 1; background-color: green;}
+        #box3 {z-index: 2; background-color: blue;}
+        #box2:hover {background-color: yellow; z-index: 10;}
+        /* box:nth-child 활용하는 방법도 존재!! */
+        #manuvar {background-color: olive;}
+        #manuvar ul{margin: 0; padding: 0; width: 534;}
+        #manuvar ul li {display: inline;list-style: none;padding: 0px 15px;}
+        #manuvar ul li a{color:white; text-decoration-color: none;}
+        #manuvar ul li a:hover {color:rgb(0, 255, 251)}
+
+    </style>
+</head>
+<body>
+    <!-- <div>
+        <span>block span</span>
+        <span>block span</span>
+    </div>
+    <div style="background-color: aquamarine;">
+        <div>inline div</div>
+        <div>inline div</div>
+        <div>inline div</div>
+        <div>inline div</div>
+    </div>
+    <br>
+    <hr>
+    <div style="display: inline-block;
+    background-color: blueviolet; padding: 20px;">
+        <div>inline div</div>
+        <div>inline div</div>
+        <div>inline div</div>
+        <div>inline div</div>
+    </div>
+    <br> -->
+    <h1>실습#1:EX.5-1</h1>
+    <section>
+        <hr>
+        <h1>상대위치, relative</h1>
+        <p>h와 k 글자에 마우스를 올려 보세요</p>
+        <hr>
+        <div class="div1">
+            <b style="color: azure;">T</b>
+        </div>
+        <div class="div1" id="down">
+            <b style="color: azure;">H</b>
+        </div>
+        <div class="div1">
+            <b style="color: azure;">A</b>
+        </div>
+        <div class="div1">
+            <b style="color: azure;">N</b>
+        </div>
+        <div class="div1" id="up">
+            <b style="color: azure;">K</b>
+        </div>
+        <div class="div1">
+            <b style="color: azure;">S</b>
+        </div>
+    </section>
+    <hr>
+    <h1>실습#2:EX.5-2</h1>
+    <section>
+        <div class="div2">
+            <div id="box1" style ="position: absolute; left: 300px; top:360px;"></div>
+            <div id="box2" style ="position: absolute; left: 350px; top:410px;"></div>
+            <div id="box3" style ="position: absolute; left: 400px; top:460px;"></div>
+        </div>
+    </section>
+    <hr>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <hr>
+    <h1>실습#3:EX.5-3</h1><hr>
+    <nav id="manuvar">
+        <ul>
+            <li><a href="#1">HOME</a></li>
+            <li><a href="#2">내 소개</a></li>
+            <li><a href="#3">관심사</a></li>
+            <li><a href="#4">포트폴리오</a></li>
+            <li><a href="#5">Q&A</a></li>
+        </ul>
+    </nav>
+</body>
+</html>

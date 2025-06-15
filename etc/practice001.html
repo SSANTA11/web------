@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>둥근 모서리 테두리</title>
+        <meta name="author" content="노현수">
+        <style>
+        p:hover {background-color:aqua;}
+        p:active {color:red;}
+        button:focus {color: yellowgreen;}
+        #irregular:focus {color: rgb(164, 31, 84); font-size:50px;}
+        li:nth-child(even) {color:red;}
+        input[type="reset"] {background-color: green;}
+        ul li:hover {color:blue; font-style: italic;}
+        </style>
+    </head>
+    <body>
+        <div>
+            <p>서로 살고있더라고 우우우 우우 우우 우우우 우우후</p>
+            <!-- p는 단락을 의미하고 인라인 태그에 속한다. -->
+        </div>
+        <form name="아이디" action="" method="get" target="_blank">
+            <fieldset>
+                <legend>로그인</legend>
+                <label>
+                    아이디&nbsp;&nbsp;&nbsp;
+                    <input name="아이디" type="text" value="">
+                    <input type="reset" value="삭제">
+                    <input type="submit" value="확인"><br>
+                </label>
+                <label>
+                    비밀번호
+                    <input name="패스워드" type="password" value="">
+                    <input type="reset" value="삭제">
+                    <input type="submit" value="확인"><br>
+                </label>
+            </fieldset>
+            <button type="button">1</button>
+            <button type="button">2</button>
+            <button type="button">3</button><br>
+            <button id="irragular" type="button">4</button>
+            <button type="button">5</button>
+            <button type="button">6</button><br>
+            <button type="button">7</button>
+            <button type="button">8</button>
+            <button type="button">9</button><br>
+            <button type="button">0</button><br>
+            a<input type ="checkbox" value="1">
+            b<input type ="checkbox" value="2">
+            c<input type ="checkbox" value="3">
+            d<input type ="checkbox" value="4"><br>
+            현대<input type ="radio" name="자동차" value="1">
+            벤츠<input type ="radio" name="자동차" value="2">
+            쌍용<input type ="radio" name="자동차" value="3"><br>
+            <select name="중국집">
+                <option value="1" selected>짜장</option>
+                <option value="2">짬뽕</option>
+                <option value="3">단무지 추가</option>
+            </select>
+        </form>
+        <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+        </ul>
+
+    </body>
+</html>

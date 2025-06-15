@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>An Ajax example</title>
+        <script language="javascript">
+            let xhr = false;
+            xhr = new XMLHttpRequest();
+            function disappear() {
+      var obj = document.getElementById('targetDiv');
+      obj.innerHTML = '<p>The fetched data will appear here.</p>';
+    }
+            function getData(dataSource, divID) {
+                if (xhr) {
+                    let obj = document.getElementById(divID);
+                    xhr.open("GET", dataSource);
+                    xhr.onreadystatechange = function () {
+                        if (xhr.readyState == 4 && xhr.status == 200) {obj.innerHTML = xhr.responseText;}
+                    }
+                    xhr.send(null);
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <H1>An Ajax example</H1>
+        <!-- 실습1.EX 1-1 -->
+        <!-- <form>
+            <input type="button" value="Fetch the message" onclick="getData('data.txt', 'targetDiv')">
+        </form> -->
+        <!-- 실습1.EX 2-1 -->
+        <form>
+            <input type="button" value="Fetch the message" onclick="getData('data.html', 'targetDiv')">
+        </form>
+        <div id="targetDiv">
+            <p>The fetched message will appear here.</p>
+        </div>
+    </body>
+</html>
+

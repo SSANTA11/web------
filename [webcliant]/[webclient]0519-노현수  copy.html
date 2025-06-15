@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 실습#1: EX.7-1
+        // let index=0;
+        // function clickHandler(){
+        //     let values=new Array();
+        //     let text=document.getElementById("input");
+        //     values[index]=Number(text.value);
+        //     let output=document.getElementById("output");
+        //     output.innerHTML+="<p>"+"Array["+index+"] = "+values[index]+"</p>";
+        //     index++;
+        //     text.value = "";
+        // }
+        // 실습#2: EX.7-2
+        // function updateCountdown(){
+            //     let now = new Date();
+            //     let xmas = new Date("12/25/2025 00:00:00");
+            //     let diff = xmas.getTime() - now.getTime();
+        //     if (diff < 0) {
+        //         document.getElementById("d").innerHTML = "<div>🎄 이미 크리스마스입니다!</div>";
+        //         return;
+        //     }
+        // let diff_days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        // let hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        // let minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        // let seconds = Math.floor((diff % (1000 * 60)) / 1000);
+        // document.getElementById("d").innerHTML = "<div>" + diff_days + "일</div>";
+        // document.getElementById("h").innerHTML = "<div>" + hours + "시간</div>";
+        // document.getElementById("m").innerHTML = "<div>" + minutes + "분</div>";
+        // document.getElementById("s").innerHTML = "<div>" + seconds + "초</div>";
+        // }
+        // // 1초마다 업데이트
+        // setInterval(updateCountdown, 1000);
+
+        // // 처음 로딩 시 한 번 실행
+        // window.onload = updateCountdown;
+        // 실습#3: EX.7-4
+        let Student={
+
+            name:"노현수",
+            age:25,
+
+            info:function(){
+                return this.name+" "+this.age
+            }
+        }
+
+        document.write(Student.info());
+        function Student(name, age){
+            this.name = name;
+            this.age = age;
+        }
+    </script>
+</head>
+<body>
+<!-- 실습#1: EX.7-1 -->
+<!-- <input id="input" type="text" name="element" value="">
+<button type="button" onclick="clickHandler()">append</button>
+<div id="output"></div> -->
+
+<!-- 실습#2: EX.7-2 -->
+<!-- <div>금년 크리스마스까지</div>
+    <div id="d"></div>
+    <div id="h"></div>
+    <div id="m"></div>
+    <div id="s"></div>
+    <div>남았습니다!</div> -->
+
+<!-- 실습#3: EX.7-4 -->
+<!-- script에 작성함 -->
+</body>
+</html>
