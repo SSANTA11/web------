@@ -8,7 +8,6 @@ const dot = ['.', '..', '...'];
 let i = 0;
 const port = 3000;
 
-// ──────────────── Helper Functions ────────────────
 function readJSON(filePath) {
   try {
     const raw = fs.readFileSync(filePath, 'utf-8');
@@ -18,12 +17,10 @@ function readJSON(filePath) {
   }
 }
 
-// ──────────────── Express Middlewares ────────────────
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-// ──────────────── HTML 페이지 라우팅 ────────────────
 app.get('/login', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'login.html'));
 });
@@ -32,7 +29,6 @@ app.get('/main', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'main.html'));
 });
 
-// ──────────────── 로그인 ────────────────
 app.post('/login', (req, res) => {
   const { username, password } = req.body;
   console.log("로그인 요청:", username);
@@ -47,7 +43,6 @@ app.post('/login', (req, res) => {
   }
 });
 
-// ──────────────── 회원가입 ────────────────
 app.post('/register', (req, res) => {
   const { username, password } = req.body;
   console.log("회원가입 요청:", username);
@@ -92,13 +87,11 @@ app.post('/register', (req, res) => {
   }
 });
 
-// ──────────────── 채팅방 목록 조회 ────────────────
 app.get('/rooms', (req, res) => {
   const rooms = readJSON("rooms.json");
   res.json(rooms);
 });
 
-// ──────────────── 채팅방 생성 ────────────────
 app.post('/rooms', (req, res) => {
   const { roomName } = req.body;
   console.log("채팅방 생성 요청:", roomName);
@@ -118,7 +111,6 @@ app.post('/rooms', (req, res) => {
   }
 });
 
-// ──────────────── 메시지 저장 ────────────────
 app.post('/messages', (req, res) => {
   const { room, user, message } = req.body;
   if (!room || !user || !message) {
@@ -140,7 +132,6 @@ app.post('/messages', (req, res) => {
   res.send({ success: true });
 });
 
-// ──────────────── 메시지 조회 (방별) ────────────────
 app.get('/messages/room=:roomName', (req, res) => {
   const room = req.params.roomName;
   const messages = readJSON("messages.json");
@@ -148,7 +139,6 @@ app.get('/messages/room=:roomName', (req, res) => {
   res.json(filtered);
 });
 
-// ──────────────── 서버 시작 ────────────────
 app.listen(port, () => {
   let dots = setInterval(() => {
     process.stdout.write('\r서버 구동 중' + dot[i % dot.length] + ' ');

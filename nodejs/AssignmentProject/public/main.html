@@ -74,12 +74,12 @@
       const container = document.getElementById("roomList");
       const div = document.createElement("div");
       div.innerHTML = `
-      <a href="Room.html?room=${encodeURIComponent(roomName)}" class="btn position-relative" style="color: white;" >
+      <a href="Room.html?room=${encodeURIComponent(roomName)}" class="btn position-relative" style="color: white;" onclick="visit()">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-right-quote-fill" viewBox="0 0 16 16">
               <path d="M16 2a2 2 0 0 0-2-2H2a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h9.586a1 1 0 0 1 .707.293l2.853 2.853a.5.5 0 0 0 .854-.353z"/>
             </svg>
             ${roomName} 채팅방 들어가기!
-            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">91+</span>
+            <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">open!</span>
           </a>`;
 
       container.appendChild(div);
@@ -98,7 +98,7 @@
           const container = document.getElementById("roomList");
           container.innerHTML = "";
           if (rooms.length === 0) {
-            container.innerHTML = `<p style="color:rgba(255, 255, 255, 0.7);"><br>⛔ 채팅방이 없습니다. 새로 만들어보세요!</p>`;
+            container.innerHTML = `<p style="color:rgba(255, 255, 2551, 0.7);"><br>⛔ 채팅방이 없습니다. 새로 만들어보세요!</p>`;
             return;
           }
           rooms.forEach(r => addRoomlist(r.roomName));
