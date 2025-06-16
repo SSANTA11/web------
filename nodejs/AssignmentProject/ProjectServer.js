@@ -129,12 +129,12 @@ app.post('/messages', (req, res) => {
   res.send({ success: true });
 });
 
-app.get('/messages/room=:roomName', (req, res) => {
-  const room = req.params.roomName;
-  const messages = readJSON("messages.json");
-  const filtered = messages.filter(m => m.room === room);
-  res.json(filtered);
-});
+  app.get('/messages/room=:roomName', (req, res) => {
+    const room = req.params.roomName;
+    const messages = readJSON("messages.json");
+    const filtered = messages.filter(m => m.room === room);
+    res.json(filtered);
+  });
 
 app.listen(port, () => {
   let dots = setInterval(() => {
