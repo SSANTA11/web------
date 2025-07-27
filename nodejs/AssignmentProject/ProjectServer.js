@@ -6,7 +6,7 @@ const app = express();
 
 const dot = ['.', '..', '...'];
 let i = 0;
-const port = 3000;
+const PORT = process.env.PORT || 10000;
 
 function readJSON(filePath) {
   try {
@@ -136,10 +136,10 @@ app.get('/messages/room=:roomName', (req, res) => {
   res.json(filtered);
 });
 
-app.listen(port, () => {
+app.listen(PORT, () => {
   let dots = setInterval(() => {
     process.stdout.write('\r서버 구동 중' + dot[i % dot.length] + ' ');
     i++;
   }, 500);
-  console.log(`\n서버 주소: http://localhost:${port}/login`);
+  console.log(`\n서버 주소: http://localhost:${PORT}/login`);
 });
