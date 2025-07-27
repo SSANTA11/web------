@@ -1,7 +1,6 @@
 {
   "name": "assignmentproject",
   "version": "1.0.0",
-  "main": "ProjectServer.js",
   "scripts": {
     "start": "node ProjectServer.js"
   },
